@@ -1,0 +1,53 @@
+<div class="header__user">
+  {% if hide_user_action == blank or hide_user_action == false %}
+    <div class="header__user-actions">
+      {%- if customer == blank -%}
+        <a
+          href="{{ routes.account_register_url }}"
+          class="focus-inset"
+          rel="nofollow"
+        >
+          <span>{{ 'sections.header.user_action.register' | t }}</span>
+        </a>
+        <span>|</span>
+      {%- endif -%}
+      <a
+        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        class="focus-inset"
+        rel="nofollow"
+      >
+        <span>{{ 'sections.header.user_action.my_account' | t }}</span>
+        <span class="visually-hidden">
+          {%- liquid
+            if customer
+              echo 'customer.account_fallback' | t
+            else
+              echo 'customer.log_in' | t
+            endif
+          -%}
+        </span>
+      </a>
+    </div>
+  {% endif %}
+  <div class="header__user-icons">
+    <a href="#" class="link focus-inset">
+      <span class="svg-wrapper">
+        {{- 'icon-wishlist-koibird.svg' | inline_asset_content -}}
+      </span>
+    </a>
+
+    <a href="{{ routes.cart_url }}" class="cart-icon link focus-inset" id="cart-icon-bubble">
+      <span class="svg-wrapper">
+        {{- 'icon-cart-koibird.svg' | inline_asset_content -}}
+      </span>
+      <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+      {%- if cart != empty -%}
+        <div class="cart-count-bubble">
+          {%- if cart.item_count < 100 -%}
+            <span aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+</div>

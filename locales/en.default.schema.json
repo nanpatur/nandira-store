@@ -135,7 +135,19 @@
         },
         "shadow": {
           "label": "Shadow"
-        }
+        },
+        "primary": {
+          "label": "Primary Colors"
+        },
+        "secondary": {
+          "label": "Secondary"
+        },
+        "error": {
+          "label": "Error"
+        },
+        "success": {
+          "label": "Success"
+        },
       }
     },
     "logo": {
@@ -393,7 +405,9 @@
       "padding": {
         "section_padding_heading": "Section padding",
         "padding_top": "Top padding",
-        "padding_bottom": "Bottom padding"
+        "padding_bottom": "Bottom padding",
+        "padding_left": "Left padding",
+        "padding_right": "Right padding"
       },
       "spacing": "Spacing",
       "colors": {
@@ -1183,7 +1197,10 @@
         "enable_customer_avatar": {
           "label": "Show avatar",
           "info": "Customers will only see their avatar when they're signed in with Shop"
-        }
+        },
+        "show_navbar": {
+          "label": "Show navbar",
+        },
       }
     },
     "image-banner": {
@@ -1282,11 +1299,11 @@
         }
       },
       "blocks": {
-        "heading": {
-          "name": "Heading",
+        "logo": {
+          "name": "Logo",
           "settings": {
-            "heading": {
-              "label": "Heading",
+            "heading_alternative": {
+              "label": "Heading (Alternative)",
               "default": "Image banner"
             }
           }
@@ -3415,6 +3432,39 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "category": {
+      "name": "Category Grid",
+      "blocks": {
+        "category_picker": {
+          "name": "Category",
+          "settings": {
+            "collection": {
+              "label": "Select a collection",
+            }
+          },
+        }
+      },
+      "settings": {
+        "column_size_desktop": {
+          "label": "Column size on Desktop",
+        },
+        "column_size_mobile": {
+          "label": "Column size on Mobile",
+        },
+        "image_overlay_opacity": {
+          "label": "Image overlay opacity",
+        },
+        "category_card_header": {
+          "content": "Category Card",
+        },
+        "show_button": {
+          "label": "Show button",
+        },
+        "button_text": {
+          "label": "Button text",
+        },
       }
     }
   }

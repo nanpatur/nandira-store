@@ -1,0 +1,137 @@
+.slider__section {
+  margin-bottom: 5em;
+}
+
+.slider__container {
+  width: 100%;
+  padding: 0 0 32px;
+}
+
+.slider__container-list {
+  padding: 0 32px;
+}
+
+.slider__header {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-bottom: 46px;
+}
+
+.slider__header-line {
+  flex: 1;
+  border: none;
+  border-top: 5px solid var(--color-primary);
+  margin: 0;
+}
+
+.slider__header-title {
+  font-size: 22px;
+}
+
+.slider__list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.slider-area {
+  overflow: hidden;
+  width: 100%;
+  flex: 1;
+}
+
+.slider-wrapper {
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.slider__btn {
+  content-visibility: hidden;
+  width: 24px;
+  height: 24px;
+  border-style: solid;
+  border-color: var(--color-primary);
+  border-width: 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.slider__btn--next {
+  border-width: 4px 4px 0 0;
+}
+
+.slider__btn--prev {
+  border-width: 0 0 4px 4px;
+}
+
+.slider__item {
+  animation: slide 0.5s ease;
+}
+
+/* =============================================
+    PRODUCT STYLES
+   ============================================= */
+
+.product__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.product__image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product__image:hover {
+  transform: scale(1.1);
+}
+
+.product__title,
+.product__brand,
+.product__price {
+  font-size: var(--font-size-lg);
+}
+
+.product__title {
+  text-align: center;
+  letter-spacing: 0.07em;
+}
+
+.product__brand {
+  color: #999999;
+}
+
+.product-cta .btn:hover {
+  cursor: pointer;
+  background-color: rgba(224, 255, 4, 0.25);
+}
+
+@media (min-width: 1024px) {
+  .slider__container {
+    padding: 74px 0;
+  }
+
+  .slider__container-list {
+    padding: 0 80px;
+  }
+
+  .slider__btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .slider__container-list {
+    padding: 0 150px;
+  }
+}

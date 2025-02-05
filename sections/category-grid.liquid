@@ -1,0 +1,206 @@
+{% style %}
+  #Category-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  .category__content {
+    display: grid;
+    grid-template-columns: repeat({{section.settings.column_size_mobile}}, 1fr);
+  }
+
+  .category__card {
+    background-color: #333;
+    aspect-ratio: 1/1;
+    background-size: cover;
+  }
+
+  .category__overlay {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.{{section.settings.image_overlay_opacity}});
+    transition: background-color 0.3s;
+  }
+
+  .category__overlay:hover {
+    background-color: rgba(224, 255, 4, 0.8);
+  }
+
+  .category__button {
+    font-size: 16px;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  .category__button::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border: 0 solid #ffffff;
+    border-width: 1.5px 1.5px 0 0;
+    transform: rotate(45deg);
+    margin-left: 20px;
+  }
+
+  .category__name {
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 600px) {
+    .category__overlay {
+      gap: 16px;
+    }
+
+    .category__button {
+      font-size: var(--font-size-lg);
+    }
+
+    .category__name {
+      font-size: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .category__container {
+      padding: 0 80px;
+    }
+
+    .category__content {
+      grid-template-columns: repeat({{section.settings.column_size_desktop}}, 1fr);
+      gap: 20px;
+    }
+
+    .category__button::after {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .category__container {
+      padding: 0 150px;
+    }
+
+    .category__name {
+      font-size: 50px;
+    }
+  }
+{% endstyle %}
+
+<section id="Category-{{ section.id }}" class="category__section">
+  <div class="container category__container page-width">
+    <div class="category__content">
+      {% for block in section.blocks %}
+        {% assign category = collections[block.settings.category] %}
+        {% if category == blank %}
+          {% continue %}
+        {% endif %}
+        <a href="/collections/{{ category.handle }}" class="category__item unstyled-link">
+          <div class="category__card" style="background-image: url('{{ category.image | image_url }}')">
+            <div class="category__overlay">
+              <div class="category__name">{{ category.title }}</div>
+              {% if section.settings.show_button %}
+                <button class="category__button btn">{{ section.settings.button_text }}</button>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.category.name",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "category_picker",
+      "name": "t:sections.category.blocks.category_picker.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "category",
+          "label": "t:sections.category.settings.column_size_desktop.label"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "column_size_desktop",
+      "label": "t:sections.category.settings.column_size_desktop.label",
+      "default": 3,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "column_size_mobile",
+      "label": "t:sections.category.settings.column_size_mobile.label",
+      "default": 1,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "t:sections.category.settings.image_overlay_opacity.label",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "type": "header",
+      "content": "t:sections.category.settings.category_card_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "t:sections.category.settings.show_button.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.category.settings.button_text.label",
+      "default": "Shop now"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "default": 0,
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}

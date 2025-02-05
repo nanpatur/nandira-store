@@ -1,210 +1,252 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "logo": {
+          "type": "logo",
           "settings": {
-            "heading": "Image banner",
+            "logo_banner": "shopify://shop_images/BANNER_LOGO_1.png",
+            "logo_width": 500,
+            "heading": "<strong>KOIBIRD</strong>",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "BEAUTY AND THE PISTE"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
+        "logo",
         "text"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "image": "shopify://shop_images/banner-background.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "right",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "strapline_bar": {
+      "type": "strapline-bar",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "message": "WHAT WE ARE SHOPPING NOW",
+        "text_color": "#000000",
+        "font_weight": "700",
+        "letter_spacing": 4,
+        "font_size": 22,
+        "padding": 48
+      }
+    },
+    "product_slider_new_in": {
+      "type": "product-slider",
+      "settings": {
+        "title": "NEW IN",
         "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "limit": 5,
+        "slides_to_show_desktop": 4,
+        "slides_to_show_mobile": 2,
+        "show_vendor": true,
+        "show_price": true,
+        "show_button": true,
+        "button_text": "SHOP NOW",
+        "margin_top": 40,
+        "margin_bottom": 60
       }
     },
-    "collage": {
-      "type": "collage",
+    "category_grid": {
+      "type": "category-grid",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "category_picker_1": {
+          "type": "category_picker",
           "settings": {
-            "collection": ""
+            "category": "outwear"
           }
         },
-        "product": {
-          "type": "product",
+        "category_picker_2": {
+          "type": "category_picker",
           "settings": {
-            "product": "",
-            "second_image": false
+            "category": "skis"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "category_picker_3": {
+          "type": "category_picker",
           "settings": {
-            "collection": ""
+            "category": "knitwear"
+          }
+        },
+        "category_picker_4": {
+          "type": "category_picker",
+          "settings": {
+            "category": "accessories"
+          }
+        },
+        "category_picker_5": {
+          "type": "category_picker",
+          "settings": {
+            "category": "googles"
+          }
+        },
+        "category_picker_6": {
+          "type": "category_picker",
+          "settings": {
+            "category": "jackets"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "category_picker_1",
+        "category_picker_2",
+        "category_picker_3",
+        "category_picker_4",
+        "category_picker_5",
+        "category_picker_6"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "column_size_desktop": 3,
+        "column_size_mobile": 1,
+        "image_overlay_opacity": 25,
+        "show_button": true,
+        "button_text": "SHOP NOW"
       }
     },
-    "video": {
-      "type": "video",
+    "product_slider_best_sellers": {
+      "type": "product-slider",
       "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "BEST SELLERS",
+        "collection": "all",
+        "limit": 5,
+        "slides_to_show_desktop": 4,
+        "slides_to_show_mobile": 1,
+        "show_vendor": true,
+        "show_price": true,
+        "show_button": true,
+        "button_text": "SHOP NOW",
+        "margin_top": 40,
+        "margin_bottom": 60
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "gallery": {
+      "type": "gallery",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "gallery_1": {
+          "type": "gallery",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "picture_url": "shopify://shop_images/instagram-1.png"
           }
         },
-        "column2": {
-          "type": "column",
+        "gallery_2": {
+          "type": "gallery",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "picture_url": "shopify://shop_images/instagram-2.png"
           }
         },
-        "column3": {
-          "type": "column",
+        "gallery_3": {
+          "type": "gallery",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "picture_url": "shopify://shop_images/instagram-3.png"
+          }
+        },
+        "gallery_4": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-4.png"
+          }
+        },
+        "gallery_5": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-5.png"
+          }
+        },
+        "gallery_6": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-6.png"
+          }
+        },
+        "gallery_7": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-7.png"
+          }
+        },
+        "gallery_8": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-8.png"
+          }
+        },
+        "gallery_9": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-9.png"
+          }
+        },
+        "gallery_10": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-10.png"
+          }
+        },
+        "gallery_11": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-11.png"
+          }
+        },
+        "gallery_12": {
+          "type": "gallery",
+          "settings": {
+            "picture_url": "shopify://shop_images/instagram-12.png"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "gallery_1",
+        "gallery_2",
+        "gallery_3",
+        "gallery_4",
+        "gallery_5",
+        "gallery_6",
+        "gallery_7",
+        "gallery_8",
+        "gallery_9",
+        "gallery_10",
+        "gallery_11",
+        "gallery_12"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "title": "#KOISKI",
+        "column_size_desktop": 6,
+        "column_size_mobile": 3,
+        "margin_bottom": 50
       }
     }
   },
   "order": [
     "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "strapline_bar",
+    "product_slider_new_in",
+    "category_grid",
+    "product_slider_best_sellers",
+    "gallery"
   ]
 }

@@ -60,7 +60,8 @@
   "newsletter": {
     "label": "Email",
     "success": "Thanks for subscribing",
-    "button_label": "Subscribe"
+    "button_label": "Subscribe",
+    "accepts_tnc": "I agree to the Terms & Conditions and Privacy Policy"
   },
   "accessibility": {
     "skip_to_text": "Skip to content",
@@ -245,7 +246,10 @@
       "pages": "Pages"
     },
     "cart": {
-      "cart": "Cart"
+      "cart": "Cart",
+    },
+    "wishlist": {
+      "wishlist": "Wishlist",
     },
     "contact": {
       "form": {
@@ -279,6 +283,10 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "user_action": {
+        "register": "Register",
+        "my_account": "My account",
       }
     },
     "cart": {

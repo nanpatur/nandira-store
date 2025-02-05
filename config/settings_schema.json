@@ -81,6 +81,30 @@
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
             "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "primary",
+            "label": "t:settings_schema.colors.settings.primary.label",
+            "default": "#E0FF04"
+          },
+          {
+            "type": "color",
+            "id": "secondary",
+            "label": "t:settings_schema.colors.settings.secondary.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "error",
+            "label": "t:settings_schema.colors.settings.error.label",
+            "default": "#F04438"
+          },
+          {
+            "type": "color",
+            "id": "success",
+            "label": "t:settings_schema.colors.settings.success.label",
+            "default": "#00a73d"
           }
         ],
         "role": {
@@ -155,8 +179,8 @@
         "type": "range",
         "id": "page_width",
         "min": 1000,
-        "max": 1600,
-        "step": 100,
+        "max": 1920,
+        "step": 20,
         "default": 1200,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.page_width.label"

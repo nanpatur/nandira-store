@@ -1,0 +1,181 @@
+{{ 'product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'slider.js' | asset_url | script_tag }}
+
+{% style %}
+  #ProductSlider-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  #ProductSlider-{{ section.id }} .slider__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-xl);
+    min-width: calc(100% / {{section.settings.slides_to_show_mobile}});
+  }
+
+  @media (min-width: 1024px) {
+    #ProductSlider-{{ section.id }} .slider__item {
+      min-width: calc(100% / {{section.settings.slides_to_show_desktop}});
+    }
+  }
+{% endstyle %}
+
+<section id="ProductSlider-{{ section.id }}" class="slider__section {{ section.id }}" id="{{ section.id }}">
+  <div class="slider__content">
+    <!-- Slider Header -->
+    <div class="slider__header">
+      <hr class="slider__header-line">
+      <p class="slider__header-title">{{ section.settings.title }}</p>
+      <hr class="slider__header-line">
+    </div>
+    <!-- /slider header -->
+
+    <!-- Slider List -->
+    <div class="container slider__container-list page-width">
+      <div class="slider__list">
+        <div class="slider__btn slider__btn--prev js__prev-btn">prev</div>
+        <div class="slider-area">
+          <div class="slider slider-wrapper">
+            {% assign products = section.settings.collection.products | sort: 'created_at' | reverse %}
+            {% for product in products limit: section.settings.limit %}
+              <a href="{{ product.url }}" class="slider__item unstyled-link">
+                <div class="product__card">
+                  <img
+                    class="product__image"
+                    src="{{ product.featured_image | image_url }}"
+                    alt="{{ product.title }}"
+                    width="100%"
+                    height="300"
+                  >
+                  <div class="product__title">{{ product.title }}</div>
+                  {% if section.settings.show_vendor %}
+                    <div class="product__brand">{{ product.vendor }}</div>
+                  {% endif %}
+                  {% if section.settings.show_price %}
+                    <div class="product__price">{{ product.price | money_with_currency }}</div>
+                  {% endif %}
+                  {% if section.settings.show_button %}
+                    <div class="product__cta">
+                      <button class="btn">{{ section.settings.button_text }}</button>
+                    </div>
+                  {% endif %}
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="slider__btn slider__btn--next js__next-btn">next</div>
+      </div>
+    </div>
+    <!-- /slider list -->
+  </div>
+</section>
+
+<script
+  defer
+>
+  initializeSlider('#' + {{section.id | json}});
+</script>
+
+{% schema %}
+{
+  "name": "Product Slider Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product Slider"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "New In"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "min": 1,
+      "max": 10,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "slides_to_show_desktop",
+      "label": "Slides to Show (Desktop)",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slides_to_show_mobile",
+      "label": "Slides to Show (Mobile)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Product Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show Vendor",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "header",
+      "content": "Section Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top Margin",
+      "default": 0,
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom Margin",
+      "default": 0,
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}
