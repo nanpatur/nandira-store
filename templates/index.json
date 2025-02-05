@@ -24,7 +24,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "BEAUTY AND THE PISTE"
+            "text": "BEAUTY AND THE PISTES"
           }
         }
       },
@@ -41,7 +41,9 @@
         "desktop_content_alignment": "right",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "show_text_below": false
+        "show_text_below": false,
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "strapline_bar": {
@@ -52,7 +54,9 @@
         "font_weight": "700",
         "letter_spacing": 4,
         "font_size": 22,
-        "padding": 48
+        "padding": 48,
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "product_slider_new_in": {
@@ -124,7 +128,9 @@
         "column_size_mobile": 1,
         "image_overlay_opacity": 25,
         "show_button": true,
-        "button_text": "SHOP NOW"
+        "button_text": "SHOP NOW",
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "product_slider_best_sellers": {
@@ -237,6 +243,7 @@
         "title": "#KOISKI",
         "column_size_desktop": 6,
         "column_size_mobile": 3,
+        "margin_top": 0,
         "margin_bottom": 50
       }
     }
